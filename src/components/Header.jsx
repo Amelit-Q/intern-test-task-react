@@ -3,6 +3,7 @@ import './../styles/header.scss';
 import arrowWhite from './../assets/pictures/down-arrow-white.png';
 
 export const Header = () => {
+  const navbarItems = ['Home', 'About Me', 'Portfolio', 'Contact'];
   return (
     <div className="header">
       <div className="header__hidden">∞ MENU</div>
@@ -10,10 +11,11 @@ export const Header = () => {
         <div className="header__navbar-wrapper">
           <nav className="menu">
             <ul className="menu__list">
-              <li className="menu__list-item">home</li>
-              <li className="menu__list-item">about me</li>
-              <li className="menu__list-item">portfolio</li>
-              <li className="menu__list-item">contact</li>
+              {navbarItems.map((item, id) => (
+                <li key={id} className="menu__list-item">
+                  {item}
+                </li>
+              ))}
             </ul>
           </nav>
           <div className="border-wrapper">
